@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  proxy:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./ca_cert.pem:/app/ca_cert.pem
+      - ./ca_key.pem:/app/ca_key.pem
+    restart: unless-stopped
